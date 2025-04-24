@@ -29,6 +29,13 @@ class personagem {
     get mana() {
         return this.#mana
     }
+    get morto(){
+        if (this.#vida<=0){
+            return true
+        }
+        return false
+    }
+
     constructor(vida, forca, mana) {
         this.#vida = vida;
         this.#forca = forca;
@@ -100,6 +107,16 @@ class main {
     constructor(personagens) {
         this.#personagens = personagens
     }
+    batalha(indexPersonagem1, indexPersonagem2){
+        while (!(this.#personagens[indexPersonagem1].morto || this.#personagens[indexPersonagem2].morto)){
+            if (!this.#personagens[indexPersonagem1].morto){
+                this.#personagens[indexPersonagem1].atacar(this.#personagens[indexPersonagem2])
+            }
+            if (!this.#personagens[indexPersonagem2].morto){
+                this.#personagens[indexPersonagem2].atacar(this.#personagens[indexPersonagem1])
+            }
+        }
+    }
 }
 
 const main1 = new main([
@@ -117,4 +134,4 @@ function batalhaGeral(main) { //método criado para testar a função de batalha
         }
     }
 }
-batalhaGeral(main1)
+main1.batalha(0,1)
