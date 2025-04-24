@@ -34,8 +34,8 @@ class personagem{
         this.#forca = forca;
         this.#mana = mana;
     }
-    atacar(){
-        console.log("ataque")
+    atacar(personagem){
+        personagem.vida-=this.#forca
     }
 
 }
@@ -48,9 +48,7 @@ class mago extends personagem{
     usarMagia(){
         console.log("magia")
     }
-    atacar(){
-        console.log("O mago causou ", this.forca, " dano")
-    }
+
 }
 class guerreiro extends personagem{
     constructor(vida,forca,mana,armadura){
@@ -60,9 +58,7 @@ class guerreiro extends personagem{
     defender(){
         console.log("defendido")
     }
-    atacar(){
-        console.log("o guerreiro causou ", this.forca, " dano")
-    }
+
 }
 class arqueiro extends personagem{
     constructor(vida,forca,mana,flechas){
@@ -74,14 +70,8 @@ class arqueiro extends personagem{
         this.flechas--
     }
     
-    atacar(){
-        console.log("o arqueiro causou ", this.forca, " dano")
-    }
-}
-const arqueiro1 = new arqueiro(10,10,10,10)
-const guerreiro1 = new guerreiro(10,10,10,10)
-const mago1 = new mago(10,10,10,10)
 
-arqueiro1.atacar()
-guerreiro1.atacar()
-mago1.atacar()
+}
+const arqueiro1 = new arqueiro(10,1,10,10)
+const guerreiro1 = new guerreiro(10,1,10,10)
+const mago1 = new mago(10,1,10,10)
