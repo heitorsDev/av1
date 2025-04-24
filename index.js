@@ -1,8 +1,38 @@
 class personagem{
+    #vida
+    #forca
+    #mana
+    set vida(value){
+        if (value>20){
+            throw new Error("vida maior que 20")
+        }
+        this.#vida = value
+    }
+    get vida(){
+        return this.#vida
+    }
+    set forca(value){
+        if (value>15){
+            throw new Error("forca maior que 15")
+        }
+        this.#forca = value
+    }
+    get forca(){
+        return this.#forca
+    }
+    set mana(value){
+        if (value>40){
+            throw new Error("mana maior que 40")
+        }
+        this.#mana = value
+    }
+    get mana(){
+        return this.#mana
+    }
     constructor(vida,forca,mana){
-        this.vida = vida;
-        this.forca = forca;
-        this.mana = mana;
+        this.#vida = vida;
+        this.#forca = forca;
+        this.#mana = mana;
     }
     atacar(){
         console.log("ataque")
@@ -10,7 +40,6 @@ class personagem{
 
 }
 const personagem1 = new personagem(10,10,10)
-
 class mago extends personagem{
     constructor(vida,forca,mana,magia){
         super(vida,forca,mana)
