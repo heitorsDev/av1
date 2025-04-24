@@ -4,6 +4,7 @@ class personagem{
         this.forca = forca;
         this.mana = mana;
     }
+
 }
 const personagem1 = new personagem(10,10,10)
 
@@ -12,11 +13,17 @@ class mago extends personagem{
         super(vida,forca,mana)
         this.magia = magia
     }
+    usarMagia(){
+        console.log("magia")
+    }
 }
 class guerreiro extends personagem{
     constructor(vida,forca,mana,armadura){
         super(vida,forca,mana)
         this.armadura = armadura
+    }
+    defender(){
+        console.log("defendido")
     }
 }
 class arqueiro extends personagem{
@@ -24,6 +31,9 @@ class arqueiro extends personagem{
         super(vida,forca,mana)
         this.flechas = flechas
     }
+    atirar(){
+        console.log("*flecha*")
+        this.flechas--
+    }
 }
 const arqueiro1 = new arqueiro(10,10,10,10)
-console.log(arqueiro1.flechas)
