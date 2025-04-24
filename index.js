@@ -53,6 +53,16 @@ class personagem {
     exibir() {
         console.log("O personagem está com: ", this.#vida, " vida; ", this.#mana, " mana; ", this.#forca, " forca")
     }
+    turno(acao, oponente){
+        switch (acao){
+            case "ataque":
+                break;
+            case "defesa":
+                break;
+            case "habilidade":
+                break;
+        }
+    }
 
 }
 const personagem1 = new personagem(10, 10, 10)
@@ -61,9 +71,7 @@ class mago extends personagem {
         super(vida, forca, mana)
         this.magia = magia
     }
-    usarMagia() {
-        console.log("magia")
-    }
+
     exibir() {
         console.log("O mago está com: ", this.vida, " vida; ", this.mana, " mana; ", this.forca, " forca; ", this.magia, " magia")
     }
@@ -74,9 +82,7 @@ class guerreiro extends personagem {
         super(vida, forca, mana)
         this.armadura = armadura
     }
-    defender() {
-        console.log("defendido")
-    }
+
     exibir() {
         console.log("O guerreiro está com: ", this.vida, " vida; ", this.mana, " mana; ", this.forca, " forca; ", this.armadura, " armadura")
     }
@@ -86,10 +92,7 @@ class arqueiro extends personagem {
         super(vida, forca, mana)
         this.flechas = flechas
     }
-    atirar() {
-        console.log("*flecha*")
-        this.flechas--
-    }
+
     exibir() {
         console.log("O arqueiro está com: ", this.vida, " vida; ", this.mana, " mana; ", this.forca, " forca; ", this.flechas, " flechas")
     }
@@ -134,4 +137,3 @@ function batalhaGeral(main) { //método criado para testar a função de batalha
         }
     }
 }
-main1.batalha(0,1)
